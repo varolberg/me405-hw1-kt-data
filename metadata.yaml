@@ -1,0 +1,29 @@
+dataset: Flat plate with a central circular hole in tension (Kt vs d/w)
+created: 2026-10-24
+operator: Mustafa Varol Berk
+project: ME405 term project, reference data to check FEA results
+
+source:
+  book: Shigley's Mechanical Engineering Design
+  edition: unknown
+  table: A-15
+  figure: A-15-1
+  page: 1026
+
+method:
+  tool: WebPlotDigitizer, points clicked by hand
+  calibration: "x: d/w = 0 to 0.8, y: Kt = 2.0 to 3.0"
+  points: 33
+
+conditions:
+  loading: axial tension
+  Kt_definition: "net section, sigma0 = F / ((w - d) t)"
+
+columns:
+  d_over_w: {unit: dimensionless, type: float}
+  Kt: {unit: dimensionless, type: float}
+
+missing_value: none
+raw_file: "raw/kt_A15-1.csv (as exported: ';' separator, ',' decimal, no header)"
+processed_file: "processed/kt_A15-1_clean.csv (sorted by d/w, with header, standard CSV)"
+processing: raw -> ME405HW1.ipynb (Item 4, Step 3) -> processed
