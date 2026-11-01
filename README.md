@@ -7,4 +7,3 @@ Used as reference data to check FEA results in the ME405 term project.
 - `processed/` : cleaned data
 - `scripts/` : cleanup code
 - `metadata.yaml` : source, method, column definitions
-- 
